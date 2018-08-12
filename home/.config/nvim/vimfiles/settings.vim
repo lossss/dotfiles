@@ -2,7 +2,6 @@ syntax on
 color dracula
 
 
-
 " 设置空白字符的视觉提示
 set list listchars=extends:❯,precedes:❮,tab:▸\ ,trail:˽
 
