@@ -95,3 +95,9 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias gm='git merge --no-ff '
 alias goproxy='export http_proxy=http://127.0.0.1:1080 https_proxy=http://127.0.0.1:1080'
 alias disproxy='unset http_proxy https_proxy'
+
+#functions
+function mkcd
+{
+    command mkdir $1 && cd $1
+}
