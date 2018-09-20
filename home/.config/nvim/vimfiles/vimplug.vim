@@ -17,7 +17,10 @@ Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Chiel92/vim-autoformat'
-Plug 'w0rp/ale' "代码检查
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 call plug#end()

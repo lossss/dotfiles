@@ -74,3 +74,5 @@ nmap <F8> :TagbarToggle<CR>
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1

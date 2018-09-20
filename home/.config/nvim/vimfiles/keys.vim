@@ -1,8 +1,27 @@
 " map leader
 let mapleader=';'
-nnoremap <C-S> :update<cr>
-inoremap <C-S> <Esc>:update<cr>gi
+nnoremap <c-s> :update<cr>
+inoremap <c-s> <Esc>:update<cr>gi
 noremap <leader>p :Autoformat<cr>
+
+"zoom
+function! Zoom ()
+    " check if is the zoomed state (tabnumber > 1 && window == 1)
+    if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
+        let l:cur_winview = winsaveview()
+        let l:cur_bufname = bufname('')
+        tabclose
+
+        " restore the view
+        if l:cur_bufname == bufname('')
+            call winrestview(cur_winview)
+        endif
+    else
+        tab split
+    endif
+endfunction
+
+nmap <leader>z :call Zoom()<CR>
 
 " window 切换
 nnoremap <c-j> <c-w>j
@@ -40,3 +59,10 @@ map <F2> :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>g :NERDTreeToggle<CR>
 
+"snip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
